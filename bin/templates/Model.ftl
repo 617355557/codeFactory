@@ -8,7 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Component;
 
 /**
-* 描述：${table_annotation}模型
+* 描述：${table_annotation}Model层
 * @author ${author}
 * @date ${date}
 */
@@ -31,7 +31,7 @@ public class ${table_name}Model{
      * 分页查询
      * @return
      */
-    public  List<${table_name}> queryMap(Map<String,Object> queryMap,Integer start,Integer end){
+    public  List<${table_name}> queryMap(Map<String,Object> queryMap, Integer start, Integer end){
         List<${table_name}> result =  ${table_name?uncap_first}Dao.queryMap(queryMap, start, end);
         return result;
     }

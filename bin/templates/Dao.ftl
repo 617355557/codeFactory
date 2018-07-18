@@ -3,7 +3,7 @@ import com.evada.inno.core.repository.BaseJpaRepository;
 import ${package_name}.model.${table_name};
 
 /**
-* 描述：${table_annotation} Repository接口
+* 描述：${table_annotation} Dao层
 * @author ${author}
 * @date ${date}
 */

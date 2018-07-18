@@ -8,6 +8,8 @@ public class ColumnClass {
     private String columnType;
     /** 数据库字段首字母小写且去掉下划线字符串 **/
     private String changeColumnName;
+    /** java字段类型 **/
+    private String changeColumnType;
     /** 数据库字段注释 **/
     private String columnComment;
 
@@ -42,4 +44,15 @@ public class ColumnClass {
     public void setChangeColumnName(String changeColumnName) {
         this.changeColumnName = changeColumnName;
     }
+
+    public String getChangeColumnType() {
+        
+        return changeColumnType;
+    }
+
+    public void setChangeColumnType(String changeColumnType) {
+        
+        this.changeColumnType = changeColumnType;
+    }
+    
 }
