@@ -13,8 +13,11 @@ public class TypeMap extends HashMap<String, String>{
         this.put("bigint", "Long");
         this.put("int", "Integer");
         this.put("tinyint", "Integer");
+        this.put("smallint", "Integer");
         this.put("varchar", "String");
         this.put("char", "String");
         this.put("datetime", "Date");
+        this.put("bit", "Boolean");
+        this.put("decimal", "BigDecimal");
     }
 }

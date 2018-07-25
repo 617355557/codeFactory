@@ -1,5 +1,5 @@
 package ${package_name}.sqlserver.dao;
-import com.evada.inno.core.repository.BaseJpaRepository;
+
 import ${package_name}.model.${table_name};
 
 /**

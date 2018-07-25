@@ -32,7 +32,7 @@ public class ${table_name}ServiceImpl implements I${table_name}Service {
 	public List<${table_name}> queryMap(Map<String, Object> queryMap, Integer start, Integer end) {
 		List<${table_name}> result = null;
 		try {
-            result = ${table_name?uncap_first}Model.queryMap(queryMap, start, size);
+            result = ${table_name?uncap_first}Model.queryMap(queryMap, start, end);
         }catch(Exception e) {
             log.error(e.getMessage(),e);
         }

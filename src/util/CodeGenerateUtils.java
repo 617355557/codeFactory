@@ -23,11 +23,11 @@ public class CodeGenerateUtils {
     private String diskPath;
 
     private final String AUTHOR = "linhuang";
-    private final String CURRENT_DATE = "2018/07/17";
-    private final String tableName = "TAB_AGENT_ATTACHED_INFO";
+    private final String CURRENT_DATE = "2018/07/24";
+    private final String tableName = "TAB_PROPERTY_INFO";
     private final String packageName = "com.yac";
-    private final String packageChildren = "agent";
-    private final String tableAnnotation = "代理商附加信息表";
+    private final String packageChildren = "property";
+    private final String tableAnnotation = "物业";
     private final TypeMap typeMap = new TypeMap();
     
     public CodeGenerateUtils() throws IOException {
@@ -125,7 +125,7 @@ public class CodeGenerateUtils {
     
     private void generateDaoFile() throws Exception{
         final String suffix = "Dao.java";
-        final String path = diskPath + changeTableName + suffix;
+        final String path = diskPath + "I" + changeTableName + suffix;
         final String templateName = "Dao.ftl";
         File mapperFile = new File(path);
         Map<String,Object> dataMap = new HashMap<>();

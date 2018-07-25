@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 * @author ${author}
 * @date ${date}
 */
-@Component("${table_name}Model")
+@Component("${table_name?uncap_first}Model")
 public class ${table_name}Model{
 
 	@Resource(name = "${table_name?uncap_first}Dao")

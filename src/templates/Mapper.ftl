@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="${package_name}.sqlserver.dao.I${table_name}Dao">
+<mapper namespace="${package_name}.sqlserver.dao.${package_children}.I${table_name}Dao">
 	<#assign x = "#"+"{">
 	<#assign y = "}">
-	<resultMap type="${package_name}.entity.${table_name}" id="${table_name}Result">
+	<resultMap type="${package_name}.entity.${package_children}.${table_name}" id="${table_name}Result">
 		<#if model_column?exists>
 	        <#list model_column as model>
 	        	<result column="${model.columnName}" property="${model.changeColumnName?uncap_first}"/>
@@ -56,7 +56,7 @@
 		<include refid="whereConditions" />
 	</select>
 	
-	<insert id="add" parameterType="${package_name}.entity.${table_name}"
+	<insert id="add" parameterType="${package_name}.entity.${package_children}.${table_name}"
 		keyProperty="id" keyColumn="ID" useGeneratedKeys="true">
 		insert into ${table_name_small}
 		(
@@ -76,7 +76,7 @@
 		)
 	</insert> 
 	
-	<update id="edit" parameterType="${package_name}.entity.${table_name}">
+	<update id="edit" parameterType="${package_name}.entity.${package_children}.${table_name}">
 		update ${table_name_small}
 		set
 			<#if model_column?exists>
