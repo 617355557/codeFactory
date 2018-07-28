@@ -23,11 +23,11 @@ public class CodeGenerateUtils {
     private String diskPath;
 
     private final String AUTHOR = "linhuang";
-    private final String CURRENT_DATE = "2018/07/24";
-    private final String tableName = "TAB_PROPERTY_INFO";
+    private final String CURRENT_DATE = "2018/07/27";
+    private final String tableName = "TAB_USER_BASIC_INFO";
     private final String packageName = "com.yac";
-    private final String packageChildren = "property";
-    private final String tableAnnotation = "物业";
+    private final String packageChildren = "basic_user";
+    private final String tableAnnotation = "基础用户信息";
     private final TypeMap typeMap = new TypeMap();
     
     public CodeGenerateUtils() throws IOException {

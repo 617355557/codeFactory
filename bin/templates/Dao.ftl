@@ -15,7 +15,7 @@ public interface I${table_name}Dao {
 	Integer count(@Param("queryMap") Map<String,Object> queryMap);
 	
 	List<${table_name}> queryMap(@Param("queryMap") Map<String,Object> queryMap,
-				@Param("start") Integer start,@Param("size") Integer end);
+				@Param("start") Integer start,@Param("end") Integer end);
 	
 	Integer add(${table_name} ${table_name?uncap_first});
 	
