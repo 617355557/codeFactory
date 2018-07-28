@@ -1,6 +1,12 @@
 package ${package_name}.sqlserver.dao;
 
-import ${package_name}.model.${table_name};
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+import ${package_name}.entity.${package_children}.${table_name};
 
 /**
 * 描述：${table_annotation} Dao层

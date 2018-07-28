@@ -1,5 +1,8 @@
 package ${package_name}.serviceImpl.${package_children};
 
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;

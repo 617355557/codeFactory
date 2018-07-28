@@ -6,7 +6,7 @@
 	<resultMap type="${package_name}.entity.${package_children}.${table_name}" id="${table_name}Result">
 		<#if model_column?exists>
 	        <#list model_column as model>
-	        	<result column="${model.columnName}" property="${model.changeColumnName?uncap_first}"/>
+       	<result column="${model.columnName}" property="${model.changeColumnName?uncap_first}"/>
 	        </#list>
 	    </#if>
 		
@@ -24,7 +24,7 @@
 	<sql id="whereConditions">
 		<#if model_column?exists>
 	        <#list model_column as model>
-	        	<if test="queryMap.q_${model.changeColumnName?uncap_first} != null and queryMap.q_${model.changeColumnName?uncap_first} != ''">and ${model.columnName} = ${x}queryMap.q_${model.changeColumnName?uncap_first}${y}</if>
+	    <if test="queryMap.q_${model.changeColumnName?uncap_first} != null and queryMap.q_${model.changeColumnName?uncap_first} != ''">and ${model.columnName} = ${x}queryMap.q_${model.changeColumnName?uncap_first}${y}</if>
 	        </#list>
 	    </#if>
 	</sql>
@@ -62,7 +62,7 @@
 		(
 			<#if model_column?exists>
 		        <#list model_column as model>
-		        	${model.columnName},
+        	${model.columnName},
 		        </#list>
 		    </#if>
 		)
@@ -70,7 +70,7 @@
 		(
 			<#if model_column?exists>
 		        <#list model_column as model>
-		        	${x}${model.changeColumnName?uncap_first}${y},
+        	${x}${model.changeColumnName?uncap_first}${y},
 		        </#list>
 		    </#if>
 		)
@@ -81,7 +81,7 @@
 		set
 			<#if model_column?exists>
 		        <#list model_column as model>
-		        	<if test="${model.changeColumnName?uncap_first} !=null and ${model.changeColumnName?uncap_first} != ''">${model.columnName} = ${x}${model.changeColumnName?uncap_first}${y},</if>
+        	<if test="${model.changeColumnName?uncap_first} !=null and ${model.changeColumnName?uncap_first} != ''">${model.columnName} = ${x}${model.changeColumnName?uncap_first}${y},</if>
 		        </#list>
 		    </#if>
 		where
