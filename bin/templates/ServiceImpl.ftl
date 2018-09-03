@@ -25,7 +25,9 @@ public class ${table_name}ServiceImpl implements I${table_name}Service {
 		${table_name} result = null;
 		try {
             result = ${table_name?uncap_first}Model.getById(id);
-        }catch(Exception e) {
+        } catch(BusinessException be) {
+            log.error(be.getMessage(),be);
+	    } catch(Exception e) {
             log.error(e.getMessage(),e);
         }
         return result;
@@ -36,7 +38,9 @@ public class ${table_name}ServiceImpl implements I${table_name}Service {
 		List<${table_name}> result = null;
 		try {
             result = ${table_name?uncap_first}Model.queryMap(queryMap, start, end);
-        }catch(Exception e) {
+        } catch(BusinessException be) {
+            log.error(be.getMessage(),be);
+	    } catch(Exception e) {
             log.error(e.getMessage(),e);
         }
         return result;
@@ -47,7 +51,9 @@ public class ${table_name}ServiceImpl implements I${table_name}Service {
 		Integer count = 0;
         try {
             count = ${table_name?uncap_first}Model.count(queryMap);
-        }catch(Exception e) {
+        } catch(BusinessException be) {
+            log.error(be.getMessage(),be);
+	    } catch(Exception e) {
             log.error(e.getMessage(),e);
         }
         return count;
@@ -58,7 +64,9 @@ public class ${table_name}ServiceImpl implements I${table_name}Service {
 		Integer count = 0;
         try {
             count = ${table_name?uncap_first}Model.add(${table_name?uncap_first});
-        }catch(Exception e) {
+        } catch(BusinessException be) {
+            log.error(be.getMessage(),be);
+	    } catch(Exception e) {
             log.error(e.getMessage(),e);
         }
         return count;
@@ -69,7 +77,9 @@ public class ${table_name}ServiceImpl implements I${table_name}Service {
 		Integer count = 0;
         try {
             count = ${table_name?uncap_first}Model.edit(${table_name?uncap_first});
-        }catch(Exception e) {
+        } catch(BusinessException be) {
+            log.error(be.getMessage(),be);
+	    } catch(Exception e) {
             log.error(e.getMessage(),e);
         }
         return count;
