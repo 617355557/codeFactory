@@ -23,10 +23,10 @@ public class CodeGenerateUtils {
     private String diskPath;
 
     private final String AUTHOR = "linhuang";
-    private final String CURRENT_DATE = "2018/08/27";
-    private final String tableName = "TAB_AGENT_INFO";
-    private final String packageName = "com.yac";
-    private final String packageChildren = "agent";
+    private final String tableName = "TAB_PROPERTY_INFO";
+    private final String daoPackageName = "com.mapper.sqlserver";
+    private final String mapperPackageName = "com.mapper.sqlserver";
+    private final String entityPackageName = "com.entity";
     private final String tableAnnotation = "代理商信息";
     private final TypeMap typeMap = new TypeMap();
     
@@ -62,7 +62,7 @@ public class CodeGenerateUtils {
             //生成实体类文件
             generateEntityFile(resultSet);
             //生成Model文件
-            generateModelFile();
+//            generateModelFile();
             //生成Mapper文件
             resultSet = stmt.executeQuery(sql);
             generateMapperFile(resultSet);
@@ -70,11 +70,11 @@ public class CodeGenerateUtils {
             generateDaoFile();
             
             //生成服务层接口文件
-            generateServiceInterfaceFile();
+//            generateServiceInterfaceFile();
             //生成服务实现层文件
-            generateServiceImplFile();
+//            generateServiceImplFile();
             //生成Controller层文件
-            generateControllerFile();
+//            generateControllerFile();
             
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -124,8 +124,8 @@ public class CodeGenerateUtils {
     }
     
     private void generateDaoFile() throws Exception{
-        final String suffix = "Dao.java";
-        final String path = diskPath + "I" + changeTableName + suffix;
+        final String suffix = "Mapper.java";
+        final String path = diskPath + changeTableName + suffix;
         final String templateName = "Dao.ftl";
         File mapperFile = new File(path);
         Map<String,Object> dataMap = new HashMap<>();
@@ -198,10 +198,11 @@ public class CodeGenerateUtils {
         dataMap.put("table_name_small",tableName);
         dataMap.put("table_name",changeTableName);
         dataMap.put("author",AUTHOR);
-        dataMap.put("date",CURRENT_DATE);
-        dataMap.put("package_name",packageName);
+        dataMap.put("date", DateUtil.getDay());
+        dataMap.put("daoPackageName", daoPackageName);
+        dataMap.put("mapperPackageName", mapperPackageName);
+        dataMap.put("entityPackageName", entityPackageName);
         dataMap.put("table_annotation",tableAnnotation);
-        dataMap.put("package_children", packageChildren);
         Writer out = new BufferedWriter(new OutputStreamWriter(fos, "utf-8"),10240);
         template.process(dataMap,out);
     }

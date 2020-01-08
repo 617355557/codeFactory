@@ -1,4 +1,4 @@
-package ${package_name}.entity.${package_children};
+package ${entityPackageName};
 
 /**
 * 描述：${table_annotation}实体类

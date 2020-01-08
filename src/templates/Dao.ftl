@@ -1,4 +1,4 @@
-package ${package_name}.sqlserver.dao;
+package ${daoPackageName};
 
 import java.util.List;
 import java.util.Map;
@@ -6,15 +6,15 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import ${package_name}.entity.${package_children}.${table_name};
+import ${entityPackageName}.${table_name};
 
 /**
 * 描述：${table_annotation} Dao层
 * @author ${author}
 * @date ${date}
 */
-@Repository("${table_name?uncap_first}Dao")
-public interface I${table_name}Dao {
+@Repository
+public interface ${table_name}Mapper {
 
 	${table_name} getById(Integer id);
 	
