@@ -24,7 +24,7 @@
 	<sql id="whereConditions">
 		<#if model_column?exists>
 	        <#list model_column as model>
-	    <if test="queryMap.q_${model.changeColumnName?uncap_first} != null and queryMap.q_${model.changeColumnName?uncap_first} != ''">and ${model.columnName} = ${x}queryMap.q_${model.changeColumnName?uncap_first}${y}</if>
+	    <if test='queryMap.q_${model.changeColumnName?uncap_first} != null and queryMap.q_${model.changeColumnName?uncap_first} != ""'>and ${model.columnName} = ${x}queryMap.q_${model.changeColumnName?uncap_first}${y}</if>
 	        </#list>
 	    </#if>
 	</sql>
